@@ -15,6 +15,39 @@ for (let i = 0; i < buttons.length; i++) {
   });
 }
 
+// function notify(isMatch){
+//     if (isMatch === true) {
+//         console.log("milche");
+//       } else {
+//         console.log("mile nai");
+//       }
+// }
+//check is pin number match
+const submitBtn = document.querySelector(".submit-btn");
+submitBtn.addEventListener("click", checkingTheNumber);
+
+function checkingTheNumber() {
+  const randomNumberOutput = document.querySelector("#pin-display");
+  let userInputShow = document.querySelector("#user_input_show");
+    if (randomNumberOutput.value === userInputShow.value) {
+        console.log("milche");
+    } else {
+        console.log("mile nai");
+    }
+}
+
+//delete a number from user input
+const deleteBtn = document.querySelector(".delete");
+deleteBtn.addEventListener("click", () => {
+  let userInputShow = document.querySelector("#user_input_show");
+  userInputShow.value = userInputShow.value.slice(0, -1);
+});
+//   else if (userInputShow.value.length === 0) {
+//     wrongMessage(true);
+//   } else {
+//     wrongMessage(false);
+//   }
+
 // function handle(event){
 //     let values = event.target.innerText;
 //     let userInputShow = document.getElementById("user_input_show");
@@ -39,18 +72,18 @@ for (let i = 0; i < buttons.length; i++) {
 // }
 
 
-// All clear from user input
-const clearBtn = document.querySelector(".clear");
-clearBtn.addEventListener("click", () => {
-  let userInputShow = document.querySelector(".user_input_show");
-  userInputShow.value = "";
-  disablemessage();
-});
+// // All clear from user input
+// const clearBtn = document.querySelector(".clear");
+// clearBtn.addEventListener("click", () => {
+//   let userInputShow = document.querySelector(".user_input_show");
+//   userInputShow.value = "";
+//   disablemessage();
+// });
 
-//delete a number from user input
-const deleteBtn = document.querySelector(".delete");
-deleteBtn.addEventListener("click", () => {
-  let userInputShow = document.querySelector(".user_input_show");
-  userInputShow.value = userInputShow.value.slice(0, -1);
-  disablemessage();
-});
+// //delete a number from user input
+// const deleteBtn = document.querySelector(".delete");
+// deleteBtn.addEventListener("click", () => {
+//   let userInputShow = document.querySelector(".user_input_show");
+//   userInputShow.value = userInputShow.value.slice(0, -1);
+//   disablemessage();
+// });

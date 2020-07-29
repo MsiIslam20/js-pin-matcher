@@ -35,12 +35,29 @@ document.querySelector(".clear").addEventListener("click", function(){
 document.querySelector(".submit-btn").addEventListener("click", function() {
   const randomNumberOutput = document.querySelector("#pin-display");
   let userInputShow = document.querySelector("#user_input_show");
-    if (randomNumberOutput.value === userInputShow.value) {
+    if (randomNumberOutput.value === userInputShow.value && randomNumberOutput.value.length !== 0) {
         document.getElementById("notify-match").style.display = "block";
         document.getElementById("notify-not-match").style.display = "none";
     } else {
       document.getElementById("notify-match").style.display = "none";
       document.getElementById("notify-not-match").style.display = "block";
     }
+      // try counter message
+  const tryMessage = document.querySelector(".try_message");
+  let tryCount = document.getElementById("try_count");
+  tryCountMinus = parseInt(tryCount.innerText) - 1;
+  tryCount.innerText = tryCountMinus;
+  if (randomNumberOutput.value === userInputShow.value) {
+    tryCount.innerText = 3;
+  } else if (parseInt(tryCount.innerText) <= 0) {
+    tryCount.innerText = 0;
+    tryMessage.style.color = "red";
+    document.querySelector(".submit-btn").classList.add("disable_btn");
+    document.querySelector(".submit-btn").disabled = true;
+  }
 });
+
+
+
+
 

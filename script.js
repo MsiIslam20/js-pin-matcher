@@ -35,9 +35,11 @@ document.querySelector(".clear").addEventListener("click", function(){
 document.querySelector(".submit-btn").addEventListener("click", function() {
   const randomNumberOutput = document.querySelector("#pin-display");
   let userInputShow = document.querySelector("#user_input_show");
-    if (randomNumberOutput.value === userInputShow.value && randomNumberOutput.value.length !== 0) {
+    if (randomNumberOutput.value === userInputShow.value && userInputShow.value.length !== 0) {
         document.getElementById("notify-match").style.display = "block";
         document.getElementById("notify-not-match").style.display = "none";
+    } else if(userInputShow.value.length === 0){
+      alert("Input is empty")
     } else {
       document.getElementById("notify-match").style.display = "none";
       document.getElementById("notify-not-match").style.display = "block";

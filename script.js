@@ -3,6 +3,10 @@ document.getElementById('pin-generate').addEventListener("click", function(){
     var fourDigitNumber= Math.floor(1000 + Math.random() * 9000);
 
     document.getElementById("pin-display").value = fourDigitNumber;
+    let userInputShow = document.getElementById("user_input_show");
+    userInputShow.value = "";
+    document.getElementById("notify-match").style.display = "none";
+    document.getElementById("notify-not-match").style.display = "none";
 })
 
  //function for add number beside a number in user input.
@@ -15,30 +19,28 @@ for (let i = 0; i < buttons.length; i++) {
   });
 }
 
-// function notify(isMatch){
-//     if (isMatch === true) {
-//         console.log("milche");
-//       } else {
-//         console.log("mile nai");
-//       }
-// }
-//check is pin number match
-const submitBtn = document.querySelector(".submit-btn");
-submitBtn.addEventListener("click", checkingTheNumber);
 
-function checkingTheNumber() {
+//delete a number from user input
+document.querySelector(".delete").addEventListener("click", function(){
+  let userInputShow = document.getElementById("user_input_show");
+  userInputShow.value = userInputShow.value.slice(0, -1);
+});
+// All clear from user input
+document.querySelector(".clear").addEventListener("click", function(){
+  let userInputShow = document.getElementById("user_input_show");
+  userInputShow.value = "";
+});
+
+//check is pin number match
+document.querySelector(".submit-btn").addEventListener("click", function() {
   const randomNumberOutput = document.querySelector("#pin-display");
   let userInputShow = document.querySelector("#user_input_show");
     if (randomNumberOutput.value === userInputShow.value) {
-        console.log("milche");
+        document.getElementById("notify-match").style.display = "block";
+        document.getElementById("notify-not-match").style.display = "none";
     } else {
-        console.log("mile nai");
+      document.getElementById("notify-match").style.display = "none";
+      document.getElementById("notify-not-match").style.display = "block";
     }
-}
-
-//delete a number from user input
-const deleteBtn = document.querySelector(".delete");
-deleteBtn.addEventListener("click", () => {
-  let userInputShow = document.querySelector("#user_input_show");
-  userInputShow.value = userInputShow.value.slice(0, -1);
 });
+

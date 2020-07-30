@@ -33,8 +33,8 @@ document.querySelector(".clear").addEventListener("click", function(){
 
 //check is pin number match
 document.querySelector(".submit-btn").addEventListener("click", function() {
-  const randomNumberOutput = document.querySelector("#pin-display");
-  let userInputShow = document.querySelector("#user_input_show");
+  const randomNumberOutput = document.getElementById("pin-display");
+  let userInputShow = document.getElementById("user_input_show");
     if (randomNumberOutput.value === userInputShow.value && userInputShow.value.length !== 0) {
         document.getElementById("notify-match").style.display = "block";
         document.getElementById("notify-not-match").style.display = "none";

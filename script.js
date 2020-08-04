@@ -39,7 +39,7 @@ document.querySelector(".submit-btn").addEventListener("click", function() {
         document.getElementById("notify-match").style.display = "block";
         document.getElementById("notify-not-match").style.display = "none";
     } else if(userInputShow.value.length === 0){
-      alert("Input is empty")
+      alert("Please Provide number before submitting")
     } else {
       document.getElementById("notify-match").style.display = "none";
       document.getElementById("notify-not-match").style.display = "block";

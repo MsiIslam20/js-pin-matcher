@@ -1,3 +1,4 @@
+//Get input
 let userInputShow = document.getElementById("input-show");
 
 //function for generate random number

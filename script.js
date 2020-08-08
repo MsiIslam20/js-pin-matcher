@@ -1,4 +1,6 @@
+//Get input
 let userInputShow = document.getElementById("input-show");
+
 //function for generate random number
 document.getElementById('pin-generate').addEventListener("click", function(){
     var fourDigitNumber= Math.floor(1000 + Math.random() * 9000);
@@ -40,7 +42,7 @@ document.querySelector(".submit-btn").addEventListener("click", function() {
       document.getElementById("notify-not-match").style.display = "block";
     }
 
-  // try counter message
+  // try left counter message signal
   const tryMessage = document.querySelector(".try-message");
   let tryCount = document.getElementById("try-count");
   tryCountDecrease = parseInt(tryCount.innerText) - 1;
@@ -50,7 +52,7 @@ document.querySelector(".submit-btn").addEventListener("click", function() {
   } else if (parseInt(tryCount.innerText) <= 0) {
     tryCount.innerText = 0;
     tryMessage.style.color = "red";
-    document.querySelector(".submit-btn").disabled = true;
+    document.querySelector(".submit-btn").disabled = true; //after 3 times wrong try it will disable
   }
 });
 
